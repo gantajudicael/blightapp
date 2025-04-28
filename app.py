@@ -35,7 +35,7 @@ if uploaded_file is not None:
     st.image(exg_norm, caption="ExG Visualization", use_column_width=True, clamp=True)
 
     # Threshold slider
-    threshold_exg = st.slider("Threshold for ExG (infection suspicion if < value)", min_value=-1.0, max_value=1.0, value=0.05, step=0.1)
+    threshold_exg = st.slider("Threshold for ExG (infection suspicion if < value)", min_value=-100.0, max_value=100.0, value=50.0, step=0.1)
 
     # ExG Mask
     exg_mask = (exg < threshold_exg).astype(np.uint8) * 255
